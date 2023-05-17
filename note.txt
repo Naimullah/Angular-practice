@@ -1,0 +1,48 @@
+Installation of Angular 
+npm install -g @angular/cli
+1. ng new my-angular-app
+Custom Component creation
+1. ng g c name_of_component
+installation of bootstrap
+1. npm install --save bootstrap
+Different selector in angular
+1.  <!-- <app-navbar></app-navbar> -->
+    <!-- <div app-navbar></div> -->
+   like css class <div class="app-navbar"></div>
+2. @Component({
+  // selector: '[app-navbar]',
+  selector: '.app-navbar.',
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.css']
+})
+
+
+what is data binding ?
+Data binding in Angular allows us to communicate btw a component class and its coresponding view template.
+class component -----------> HTML view
+1. One way data binding is when we can access a component class property in its corresponding view template
+
+String Interpolation  {{}}
+Property Binding:
+1. is used binding to bind the property of an HTML element to the property or method of a component class 
+Property Binding[property]=data  
+<div class="header">
+    <div class="site-image">
+        <img [src]="source" height="240" width="320">
+    </div>
+    <div class="site-slogan">
+        <h2>{{slogan}}</h2>
+        <h2>{{getSlogan()}}</h2>
+    </div>
+</div>
+export class HeaderComponent {
+slogan:string="Your one stop shop";
+source:string="/assets/images.jpg";
+getSlogan(){
+  return 'This is new Slogan for application';
+}
+}
+
+Event binding : allows us to bind webpage events to a component property or method using event binding we can pass data from
+view to component 
+Event Binding (data)="expression"
