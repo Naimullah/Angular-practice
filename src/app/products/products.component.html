@@ -1,0 +1,11 @@
+<!-- <div *ngFor="let item of [1,2,3,4]">
+    <p>THis the number :{{item}}</p>
+</div> -->
+<div *ngFor="let p of products; let i=index">
+    <p class="">{{i}}</p>
+    <div class="product-container">
+        <div class="btn btn-primary" >{{p.name}}</div>
+        <div class="btn btn-success">{{p.age}}</div>
+        <div [ngStyle]="{color:p.available=='Available' ? 'Green' : 'Red'}">{{p.available}}</div>
+    </div>
+</div>

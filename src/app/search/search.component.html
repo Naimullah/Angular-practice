@@ -1,5 +1,8 @@
-<div class="search-dev">
+<div class="search-dev" [ngClass]="{changeColor:searchValue!=''}">
     <span><b>Search:</b></span>
-    <input type="text" (input)="changeSearchValue($event)">
-    <span>You Search for {{searchValue}}</span>
+    <!-- Event Binding -->
+    <!-- <input type="text" (input)="changeSearchValue($event)"> -->
+    <!-- Two binding -->
+    <input type="text" [(ngModel)]="searchValue">
+    <span *ngIf="searchValue !=''">You Search for {{searchValue}}</span>
 </div>

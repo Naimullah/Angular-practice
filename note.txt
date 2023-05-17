@@ -46,3 +46,25 @@ getSlogan(){
 Event binding : allows us to bind webpage events to a component property or method using event binding we can pass data from
 view to component 
 Event Binding (data)="expression"
+Two way data Binding  go to app.module.ts import the form module FormModule ngModel
+<!-- Two binding -->
+    <input type="text" [(ngModel)]="searchValue">
+Directives are simply an instruction to the DOM
+types of drective 
+1. structural directive: changes the view of a webpage by adding or removing DOM element from webpage
+2. Attribute Directive: Used like an attribute on a existing webpage element to change its look and behaviour.
+ngFOr Drectives?
+1.THe ngFor directive is used to repeat a portion of HTML template once per each item from an itterable list
+2.THe ngFor is a structureal directive that means ngFor manipulates the DOM by adding or removing elements from the DOM
+<div *ngFor="let item of [1,2,3,4]">
+    <p>THis the number :{{item}}</p>
+</div>
+ngStyle  is an attribute directive. that means ngStyle chabge the look and behaviour of an HTML element 
+1. the ngStyle directive is used to set a CSS style dynamically for an HTML element based on a given typescript expression 
+<div [ngStyle]="{color:p.available=='Available' ? 'Green' : 'Red'}">{{p.available}}</div>
+ngIf Directive : the ngIf is a structural directive 
+1. the ngIf directive is used to add or remove element from a webpage based on a given condition  <span *ngIf="searchValue !=''">You Search for {{searchValue}}</span>
+ngClass Directive is an attribute directive, the ngClass directive is used to add a CSS class dynamically to webpage element
+  
+Custom Componet : W CAN PASS DATA FROM PARENT COMPONENT TO CHILD COMPONENT AND VICE VERSA. WE USE @INPUT & @OUTPUT DECORATOR for that
+1. We can pass data from component class to view template and vice cersa using property binding string interoplation and event binding
